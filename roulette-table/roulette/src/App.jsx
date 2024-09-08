@@ -137,7 +137,12 @@ function App() {
     {
       // Numberbets
       <div class="a firsts">
-      <Numberbet numbersObj={numbersObj}/>
+      <div class="b firsts">
+      <Numberbet num={8} numbersObj={numbersObj}/>
+      </div>
+      <div class="b firsts">
+      <Numberbet num={16} numbersObj={numbersObj}/>
+      </div>
       
       
       {

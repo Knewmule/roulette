@@ -3,7 +3,9 @@ export default function RedblackNumbers({color,number}){
     
     return (
         
-        <span class={color}>{number}</span>    
-
+            <>
+            <span class={color}>{number}</span>    
+        
+            </>
     )
 }
