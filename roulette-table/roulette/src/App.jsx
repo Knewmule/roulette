@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 import Zero from './Component/Zero';
 import numbersObj from '../data/numbersobj.json'
 import FirstNtwelve from './Component/Numberbet/FirstNtwelve';
@@ -123,11 +123,17 @@ function Twoto1(){
   )
 }
 
+
+
+
 function App() {
 
-
+   function firstEightHandle(setup){
+    setup !== undefined ?console.log(setup) : '';
+    setFirstEight(setup);
+  }
   
-  const [count, setCount] = useState(0)
+  const [firstEight, setFirstEight] = useState(0)
 
   return (
     <>
@@ -138,10 +144,13 @@ function App() {
       // Numberbets
       <div class="a firsts">
       <div class="b firsts">
-      <Numberbet num={8} numbersObj={numbersObj}/>
+      {firstEight === 0 ? <Numberbet num={firstEight} 
+       numbersObj={numbersObj} 
+       firstHandler={firstEightHandle}
+       /> : ''}
       </div>
       <div class="b firsts">
-      <Numberbet num={16} numbersObj={numbersObj}/>
+      <Numberbet num={firstEight} numbersObj={numbersObj}/>
       </div>
       
       
