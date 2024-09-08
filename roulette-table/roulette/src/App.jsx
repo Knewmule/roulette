@@ -2,8 +2,10 @@ import React,{ useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Zero from './Component/Zero';
+import numbersObj from '../data/numbersobj.json'
 
-
+import Numberbet from './Component/Numberbet/Numberbet'
 function zero(){
 
   return(
@@ -18,12 +20,7 @@ function Numberbets(){
 
   return(
     <div class="a firsts">
-      <div class="b firsts">
-      <span class="red">3</span>
-      <span class="black">6</span>
-      <span class="red">9</span>
-      <span class="red">12</span>
-    </div>
+      <Numberbet numbersObj={numbersObj}/>
       <div class="b firsts">
       <span class="black">2</span>
       <span class="red">5</span>
@@ -153,7 +150,7 @@ function App() {
     <>
     <div id="table1">
         
-    {zero()}
+    <Zero />
     {
       // Numberbets
       Numberbets()
