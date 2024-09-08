@@ -3,19 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-    <div id="table1">
-        
+function zero(){
+
+  return(
     <div class="zerob">
       <span id="zero" >0</span>
     </div>
-    {
-      // Numberbets
+  );
+
 }
+
+function Numberbets(){
+
+  return(
     <div class="a firsts">
       <div class="b firsts">
       <span class="red">3</span>
@@ -47,13 +48,14 @@ function App() {
      EVEN
      </div>
      </div>
-  </div>    
+  </div>   
+  );
+}
 
-  {
-    //<!-- Second Number bets  -->
-  }
-      
-      <div class="a firsts">
+function Numberbets2(){
+
+  return(
+    <div class="a firsts">
          <div class="b firsts">
          <span class="black">15</span>
          <span class="red">18</span>
@@ -87,12 +89,12 @@ function App() {
         </div>
         
      </div>   
-        
+  );
+}
+function Numberbets3(){
 
-     {
-      // <!-- Third Number bets -->
-     }
-   <div class="a firsts">
+  return(
+    <div class="a firsts">
       <div class="b firsts">
       <span class="black">27</span>
       <span class="red">30</span>
@@ -125,17 +127,58 @@ function App() {
      </div>
      
   </div>
-  
-    {
-      //<!-- Two to One bets -->
-    }
-      <div class="bb ">
+  )
+}
+
+function Twoto1(){
+
+  return(
+    <div class="bb ">
         <span class="twoone">2 to 1</span>
     
       <span class="twoone">2 to 1</span>
     
       <span class="twoone">2 to 1</span>
     </div>
+  )
+}
+
+function App() {
+
+
+  
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+    <div id="table1">
+        
+    {zero()}
+    {
+      // Numberbets
+      Numberbets()
+}
+     
+
+  {
+    //<!-- Second Number bets  -->
+    Numberbets2()
+  }
+      
+      
+        
+
+     {
+      // <!-- Third Number bets -->
+      Numberbets3()
+     }
+   
+  
+    {
+      //<!-- Two to One bets -->
+      Twoto1()
+    }
+      
     </div>
       
     </>
