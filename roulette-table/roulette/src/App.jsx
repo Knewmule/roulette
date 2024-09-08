@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Zero from './Component/Zero';
 import numbersObj from '../data/numbersobj.json'
-
+import FirstNtwelve from './Component/Numberbet/FirstNtwelve';
 import Numberbet from './Component/Numberbet/Numberbet'
 function zero(){
 
@@ -21,30 +21,13 @@ function Numberbets(){
   return(
     <div class="a firsts">
       <Numberbet numbersObj={numbersObj}/>
-      <div class="b firsts">
-      <span class="black">2</span>
-      <span class="red">5</span>
-      <span class="black">8</span>
-      <span class="black">11</span>
-    </div>
-      <div class="b firsts">
-      <span class="red">1</span>
-      <span class="black">4</span>
-      <span class="red">7</span>
-      <span class="black">10</span>
-    </div>
+      
+      
       {
       //<!-- first and twelve bets -->
       }
-<div class="ftb">
-    1st Tweleve
-  </div>
-      <div class="ftbb" > 
-     1 TO 18
-       <div class="ftbb" > 
-     EVEN
-     </div>
-     </div>
+      <FirstNtwelve />
+
   </div>   
   );
 }
@@ -153,7 +136,16 @@ function App() {
     <Zero />
     {
       // Numberbets
-      Numberbets()
+      <div class="a firsts">
+      <Numberbet numbersObj={numbersObj}/>
+      
+      
+      {
+      //<!-- first and twelve bets -->
+      }
+      <FirstNtwelve />
+
+  </div>   
 }
      
 
