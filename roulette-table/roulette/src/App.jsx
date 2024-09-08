@@ -129,8 +129,8 @@ function Twoto1(){
 function App() {
 
    function firstEightHandle(setup){
-    setup !== undefined ?console.log(setup) : '';
-    setFirstEight(setup);
+    setup !== undefined ? setFirstEight(setup) : exit;
+    
   }
   
   const [firstEight, setFirstEight] = useState(0)
@@ -144,15 +144,26 @@ function App() {
       // Numberbets
       <div class="a firsts">
       <div class="b firsts">
-      {firstEight === 0 ? <Numberbet num={firstEight} 
+      {firstEight !== undefined && firstEight === 0 
+      && <Numberbet num={firstEight} 
        numbersObj={numbersObj} 
        firstHandler={firstEightHandle}
-       /> : ''}
+       /> }
       </div>
       <div class="b firsts">
-      <Numberbet num={firstEight} numbersObj={numbersObj}/>
+      {firstEight !== undefined && firstEight === 8 
+      && <Numberbet num={firstEight} 
+       numbersObj={numbersObj} 
+       firstHandler={firstEightHandle}
+       /> }
       </div>
-      
+      <div class="b firsts">
+      {firstEight !== undefined && firstEight === 16 
+      && <Numberbet num={firstEight} 
+       numbersObj={numbersObj} 
+       firstHandler={firstEightHandle}
+       /> }
+      </div>
       
       {
       //<!-- first and twelve bets -->
