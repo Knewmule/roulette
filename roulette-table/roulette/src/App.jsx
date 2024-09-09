@@ -25,49 +25,8 @@ function App() {
     {/* Last Section */}
     <NewA iteration={iteration[1]} />
     <NewA iteration={iteration[2]} />
-  {
-    //<!-- Second Section Number bets  -->
-    // Numberbets
-  }
-  <div class="a firsts">
-    <div class="b firsts">
-    <Numberbet num={32} numbersObj={numbersObj}/>
-    </div>
-    <div class="b firsts">
-    <Numberbet num={40} numbersObj={numbersObj}/>
-    </div>
-    <div class="b firsts">
-    <Numberbet num={48} numbersObj={numbersObj}/>
-  </div>
-  
-  {
-  //<!-- black or red part -->
-  }
-    <Colorbet />
-  </div> 
-  
-     {
-      // <!-- Third Number bets -->
-      <div class="a firsts">
-        <div class="b firsts">
-        <Numberbet num={32} numbersObj={numbersObj}/>
-        </div>
-        <div class="b firsts">
-        <Numberbet num={40} numbersObj={numbersObj}/>
-        </div>
-        <div class="b firsts">
-        <Numberbet num={48} numbersObj={numbersObj}/>
-        </div>
-      
-      {
-      //<!-- last and twelve bets -->
-      }
-      <FirstNtwelve tweleve={"3rd Tweleve"}
-      onebox={"ODD"}
-      evenOdd={"19 TO 36"}
-      />
-    </div>   
-     } 
+
+    
       <Twotoone /> 
     </div>
     

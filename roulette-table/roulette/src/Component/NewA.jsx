@@ -2,12 +2,18 @@ import React,{useState,useEffect} from 'react';
 import Numberbet from './Numberbet/Numberbet';
 import FirstNtwelve from './Numberbet/FirstNtwelve';
 import numbersObj from '../../data/numbersobj.json'
-
+import Colorbet from './Numberbet/Colorbet';
 export default function NewA({iteration}){
 
     const [num,setNum] = useState({});
+    const [column,setColumn] = useState({
+        tweleve:'1st Tweleve',
+        onebox:'1 TO 18',
+        evenOdd:'EVEN'
+    });
     function rowsHandle(){
         if(iteration === 0){
+            setColumn(()=>columnHandle());
             const first8 = {
                 row1:8,row2:16,row3:24
             }
@@ -20,12 +26,32 @@ export default function NewA({iteration}){
             return second8;
         }
         if(iteration === 2){
-            const second8 = {
+            setColumn(()=>columnHandle());
+            const third8 = {
                 row1:56,row2:64,row3:72
             }
-            return second8;
+            return third8;
         }
         
+    }
+    function columnHandle(){
+        if(iteration === 0){
+            const col = {
+                tweleve:'1st Tweleve',
+                onebox:'1 TO 18',
+                evenOdd:'EVEN'
+            }
+            
+            return col;
+        }
+        if(iteration === 2){
+            const col = {
+                tweleve:'3rd Tweleve',
+                onebox:'ODD',
+                evenOdd:'19 TO 36'
+            }
+            return col;
+        }
     }
     useEffect(()=>{
         setNum(rowsHandle);
@@ -44,11 +70,13 @@ export default function NewA({iteration}){
       
       {
       //<!-- first and twelve bets -->
+        iteration !== 1 ? <FirstNtwelve tweleve={column.tweleve}
+        onebox={column.onebox}
+        evenOdd={column.evenOdd}
+        />:
+        <Colorbet />
       }
-      <FirstNtwelve tweleve={"1st Tweleve"}
-      onebox={"1 TO 18"}
-      evenOdd={"EVEN"}
-      />
+      
     </div>   
     )
 }
