@@ -20,10 +20,11 @@ function App() {
     {
       // Numberbets first Section
       }
-    <NewA iteration={0} />
+    <NewA iteration={iteration[0]} />
     
     {/* Last Section */}
-    <NewA iteration={1} />
+    <NewA iteration={iteration[1]} />
+    <NewA iteration={iteration[2]} />
   {
     //<!-- Second Section Number bets  -->
     // Numberbets

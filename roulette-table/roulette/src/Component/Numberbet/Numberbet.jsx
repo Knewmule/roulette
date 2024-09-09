@@ -49,7 +49,21 @@ export default function Numberbet({numbersObj,num}){
                 }
 
                     // Last Section
-                
+                    if(num === 56 && value >=48 && value < 56 && value % 2 === 0){
+                        return(
+                            <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                        )
+                    }    
+                    if(num === 64 && value >=56 && value < 64 && value % 2 === 0){
+                        return(
+                            <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                        )
+                    }
+                    if(num === 72 && value >=64 && value < 72 && value % 2 === 0){
+                        return(
+                            <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                        )
+                    }                
 
             })}       
                 

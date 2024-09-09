@@ -19,6 +19,12 @@ export default function NewA({iteration}){
             }
             return second8;
         }
+        if(iteration === 2){
+            const second8 = {
+                row1:56,row2:64,row3:72
+            }
+            return second8;
+        }
         
     }
     useEffect(()=>{
