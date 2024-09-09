@@ -8,41 +8,23 @@ import Colorbet from './Component/Numberbet/Colorbet';
 import numbersObj from '../data/numbersobj.json'
 import FirstNtwelve from './Component/Numberbet/FirstNtwelve';
 import Numberbet from './Component/Numberbet/Numberbet'
-
+import NewA from './Component/NewA';
 
 function App() {
 
   return (
     <>
     <div id="table1">
-        
     <Zero />
     {
       // Numberbets first Section
       }
-      <div class="a firsts">
-        <div class="b firsts">
-        <Numberbet num={8} numbersObj={numbersObj}/>
-        </div>
-        <div class="b firsts">
-        <Numberbet num={16} numbersObj={numbersObj}/>
-        </div>
-        <div class="b firsts">
-        <Numberbet num={24} numbersObj={numbersObj}/>
-        </div>
-      
-      {
-      //<!-- first and twelve bets -->
-      }
-      <FirstNtwelve tweleve={"1st Tweleve"}
-      onebox={"1 TO 18"}
-      evenOdd={"EVEN"}
-      />
-      </div>   
+    <NewA />
   {
     //<!-- Second Section Number bets  -->
     // Numberbets
-    <div class="a firsts">
+  }
+  <div class="a firsts">
     <div class="b firsts">
     <Numberbet num={32} numbersObj={numbersObj}/>
     </div>
@@ -51,14 +33,14 @@ function App() {
     </div>
     <div class="b firsts">
     <Numberbet num={48} numbersObj={numbersObj}/>
-    </div>
+  </div>
   
   {
   //<!-- black or red part -->
   }
     <Colorbet />
   </div> 
-  }
+  
      {
       // <!-- Third Number bets -->
       <div class="a firsts">
@@ -79,9 +61,9 @@ function App() {
       onebox={"ODD"}
       evenOdd={"19 TO 36"}
       />
-      </div>   
+    </div>   
      } 
-    <Twotoone /> 
+      <Twotoone /> 
     </div>
     
     
