@@ -1,16 +1,18 @@
 import React from 'react';
 
-export default function FirstNtwelve(){
+export default function FirstNtwelve({tweleve,
+  onebox, evenOdd
+}){
 
     return(
         <>
         <div class="ftb">
-    1st Tweleve
+    {tweleve}
   </div>
       <div class="ftbb" > 
-     1 TO 18
+     {onebox}
        <div class="ftbb" > 
-     EVEN
+     {evenOdd}
      </div>
      </div>
         </>

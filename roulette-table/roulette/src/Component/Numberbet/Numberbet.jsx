@@ -31,6 +31,26 @@ export default function Numberbet({numbersObj,num}){
                         <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
                     )
                 }     
+                    // Middle Section
+                if(num === 32 && value >=24 && value < 32 && value % 2 === 0){
+                    return(
+                        <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                    )
+                }    
+                if(num === 40 && value >=32 && value < 40 && value % 2 === 0){
+                    return(
+                        <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                    )
+                }
+                if(num === 48 && value >=40 && value < 48 && value % 2 === 0){
+                    return(
+                        <RedblackNumbers  color={key} number={numbersObj[value+1]}/>
+                    )
+                }
+
+                    // Last Section
+                
+
             })}       
                 
               
