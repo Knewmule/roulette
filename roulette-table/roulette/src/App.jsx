@@ -137,20 +137,22 @@ function App() {
     {
       // Numberbets
       <div class="a firsts">
-      <div class="b firsts">
-      <Numberbet num={8} numbersObj={numbersObj}/>
-      </div>
-      <div class="b firsts">
-      <Numberbet num={16} numbersObj={numbersObj}/>
-      </div>
-      
+        <div class="b firsts">
+        <Numberbet num={8} numbersObj={numbersObj}/>
+        </div>
+        <div class="b firsts">
+        <Numberbet num={16} numbersObj={numbersObj}/>
+        </div>
+        <div class="b firsts">
+        <Numberbet num={24} numbersObj={numbersObj}/>
+        </div>
       
       {
       //<!-- first and twelve bets -->
       }
       <FirstNtwelve />
 
-  </div>   
+      </div>   
 }
      
 
