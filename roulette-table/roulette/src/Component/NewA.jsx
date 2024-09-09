@@ -1,16 +1,29 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Numberbet from './Numberbet/Numberbet';
 import FirstNtwelve from './Numberbet/FirstNtwelve';
 import numbersObj from '../../data/numbersobj.json'
 
-export default function NewA(){
+export default function NewA({iteration}){
 
-    const [num,setNum] = useState({
-        row1:8,
-        row2:16,
-        row3:24
-      });
-
+    const [num,setNum] = useState({});
+    function rowsHandle(){
+        if(iteration === 0){
+            const first8 = {
+                row1:8,row2:16,row3:24
+            }
+            return first8;
+        }
+        if(iteration === 1){
+            const second8 = {
+                row1:32,row2:40,row3:48
+            }
+            return second8;
+        }
+        
+    }
+    useEffect(()=>{
+        setNum(rowsHandle);
+    },[num])
     return(
     <div class="a firsts">
         <div class="b firsts">

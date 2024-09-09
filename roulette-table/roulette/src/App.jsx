@@ -10,8 +10,9 @@ import FirstNtwelve from './Component/Numberbet/FirstNtwelve';
 import Numberbet from './Component/Numberbet/Numberbet'
 import NewA from './Component/NewA';
 
+const iteration =[0,1,2];
 function App() {
-
+  // const [interation,setInteration] = useState([0,1,2])
   return (
     <>
     <div id="table1">
@@ -19,7 +20,10 @@ function App() {
     {
       // Numberbets first Section
       }
-    <NewA />
+    <NewA iteration={0} />
+    
+    {/* Last Section */}
+    <NewA iteration={1} />
   {
     //<!-- Second Section Number bets  -->
     // Numberbets
