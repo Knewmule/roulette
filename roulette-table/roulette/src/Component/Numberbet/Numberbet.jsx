@@ -1,11 +1,8 @@
-import React,{useState} from 'react';
+import React from 'react';
 import RedblackNumbers from './RedblackNumbers';
 
 
 export default function Numberbet({numbersObj,num}){
-
-    
-    const [loading,setLoading] = useState(true)
 
     return(
     

@@ -23,11 +23,7 @@ function App() {
 
       
         const content = event.target.textContent
-      setBets(prev => [...prev, {...bets.bets,['bets']:content}])
-      // const addItem = () => {
-      //   setBets(prevItems => [...prevItems, {  bets: content }]);
-      // };
-      // addItem
+      setBets(prev => [...prev, {['bets']:content}])
       console.log(bets);
       
     
