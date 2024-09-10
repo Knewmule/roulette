@@ -6,7 +6,7 @@ import NewA from './Component/NewA';
 
 // const iteration =[0,1,2,3];
 function App() {
-  const [bets,setBets] = useState([]);
+  const [bets,setBets] = useState([{}]);
   const [loading, setLoading] = useState(true);
   const [iteration,setIteration] = useState([0,1,2,3])
   function handleIteration(){
@@ -14,13 +14,20 @@ function App() {
     setIteration([3])
   }
   function handleBets(event){
-
-      
+      try{
         const content = event.target.textContent
-      setBets(prev => [...prev, {['bets']:content}])
-      console.log(bets);
+        if(bets[0].bets === null || bets[0].bets === undefined){
+          setBets(() => [ {['bets']:content}])
+          console.log(bets); 
+        } 
+      else if(bets !== null || bets !== undefined){
+        setBets((prev) => [...prev, {['bets']:content}])
+        console.log(bets); 
+      }
+      }catch(e){
+        console.log(e);
+      }
       
-    
   }
   
   return (
@@ -34,7 +41,9 @@ function App() {
         if(v <=2){
           return ( <NewA id={iteration.id}iteration={v} 
             handleIteration={handleIteration}
-            loading={loading}/>)
+            loading={loading}
+            handleBets={handleBets}
+            />)
         }
       
       })

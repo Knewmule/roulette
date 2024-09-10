@@ -5,7 +5,8 @@ import NumberbetContainer from './Numberbet/NumberbetContainer';
 export default function NewA({
     iteration, 
     handleIteration,
-    loading
+    loading,
+    handleBets
     }){
         const [column,setColumn] = useState({
             tweleve:'1st Tweleve',
@@ -29,7 +30,7 @@ export default function NewA({
         onebox={column.onebox}
         evenOdd={column.evenOdd}
         /> :
-        <Colorbet />)
+        <Colorbet handleBets={handleBets}/>)
       }
       
     </div>   

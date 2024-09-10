@@ -1,10 +1,10 @@
 import React from 'react';
-export default function Colorbet(){
+export default function Colorbet({handleBets}){
 
 
     return(
         <>
-        <div class="ftb">
+        <div onClick={handleBets}class="ftb">
             2nd Tweleve
         </div>
         
