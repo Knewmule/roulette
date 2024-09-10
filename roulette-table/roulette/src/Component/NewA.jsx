@@ -30,7 +30,7 @@ export default function NewA({
         onebox={column.onebox}
         evenOdd={column.evenOdd}
         /> :
-        <Colorbet handleBets={handleBets}/>)
+        <Colorbet />)
       }
       
     </div>   
