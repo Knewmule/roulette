@@ -10,22 +10,24 @@ import FirstNtwelve from './Component/Numberbet/FirstNtwelve';
 import Numberbet from './Component/Numberbet/Numberbet'
 import NewA from './Component/NewA';
 
-const iteration =[0,1,2];
+// const iteration =[0,1,2,3];
 function App() {
-  // const [interation,setInteration] = useState([0,1,2])
+  const [iteration,setIteration] = useState([0,1,2])
   return (
     <>
     <div id="table1">
     <Zero />
     {
       // Numberbets first Section
-      }
-    <NewA iteration={iteration[0]} />
+      iteration.map((v)=>{
+      return ( <NewA id={iteration.id}iteration={v} />)
     
     {/* Last Section */}
-    <NewA iteration={iteration[1]} />
-    <NewA iteration={iteration[2]} />
+   
 
+      })
+      }
+    
     
       <Twotoone /> 
     </div>

@@ -54,7 +54,15 @@ export default function NewA({iteration}){
         }
     }
     useEffect(()=>{
-        setNum(rowsHandle);
+        try{
+            if(iteration <= 2){
+                setNum(rowsHandle);
+            }else{
+                console.log(iteration);
+            }
+        }catch(er){
+            console.log(er)
+        }
     },[num])
     return(
     <div class="a firsts">
