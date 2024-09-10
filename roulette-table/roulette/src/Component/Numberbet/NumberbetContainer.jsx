@@ -6,16 +6,12 @@ import numbersObj from '../../../data/numbersobj.json'
 // import NumberbetContainer from './Numberbet/NumberbetContainer';
 export default function NumberbetContainer({iteration, 
     handleIteration,
-    loading}){
+    loading,setColumn}){
         
     
     
         const [num,setNum] = useState({});
-        const [column,setColumn] = useState({
-            tweleve:'1st Tweleve',
-            onebox:'1 TO 18',
-            evenOdd:'EVEN'
-        });
+        
         function rowsHandle(){
             if(iteration === 0){
                 setColumn(()=>columnHandle());

@@ -1,7 +1,5 @@
-import React,{useState,useEffect} from 'react';
-import Numberbet from './Numberbet/Numberbet';
+import React,{useState} from 'react';
 import FirstNtwelve from './Numberbet/FirstNtwelve';
-import numbersObj from '../../data/numbersobj.json'
 import Colorbet from './Numberbet/Colorbet';
 import NumberbetContainer from './Numberbet/NumberbetContainer';
 export default function NewA({
@@ -9,10 +7,17 @@ export default function NewA({
     handleIteration,
     loading
     }){
+        const [column,setColumn] = useState({
+            tweleve:'1st Tweleve',
+            onebox:'1 TO 18',
+            evenOdd:'EVEN'
+        });
 
     return(
     <div class="a firsts">
-        <NumberbetContainer iteration={iteration} 
+        <NumberbetContainer 
+        setColumn={setColumn}
+        iteration={iteration} 
     handleIteration={handleIteration}
     loading={loading} />
         
