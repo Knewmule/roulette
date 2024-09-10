@@ -13,7 +13,7 @@ export default function Numberbet({numbersObj,num}){
               
               {           
                  numbersObj.map(function(key,value){
-                    console.log(key,value)
+                    // console.log(key,value)
                    if(num === 8 && value < 8 && value % 2 === 0){
                             return(
                                     <RedblackNumbers id={numbersObj.id} color={key} number={numbersObj[value+1]}/>

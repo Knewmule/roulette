@@ -12,17 +12,32 @@ import NewA from './Component/NewA';
 
 // const iteration =[0,1,2,3];
 function App() {
+  const [bets,setBets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [iteration,setIteration] = useState([0,1,2,3])
   function handleIteration(){
     setLoading(false);
     setIteration([3])
   }
+  function handleBets(event){
+
+      
+        const content = event.target.textContent
+      setBets(prev => [...prev, {...bets.bets,['bets']:content}])
+      // const addItem = () => {
+      //   setBets(prevItems => [...prevItems, {  bets: content }]);
+      // };
+      // addItem
+      console.log(bets);
+      
+    
+  }
   
   return (
     <>
     <div id="table1">
-    <Zero />
+    <Zero loading={loading}
+    handleZero={handleBets} />
     {
       // Numberbets first Section
       loading  && iteration.map((v)=>{

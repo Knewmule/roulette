@@ -1,9 +1,11 @@
 import React from 'react';
-export default function Zero(){
+export default function Zero({handleZero,loading}){
 
     return(
-        <div className="zerob">
-      <span id="zero" >0</span>
+        loading && (
+          <div  className="zerob">
+      <span  onClick={handleZero} id="zero" >0</span>
     </div>
+        )
     )
 }
