@@ -3,7 +3,11 @@ import Numberbet from './Numberbet/Numberbet';
 import FirstNtwelve from './Numberbet/FirstNtwelve';
 import numbersObj from '../../data/numbersobj.json'
 import Colorbet from './Numberbet/Colorbet';
-export default function NewA({iteration}){
+export default function NewA({
+    iteration, 
+    handleIteration,
+    loading
+    }){
 
     const [num,setNum] = useState({});
     const [column,setColumn] = useState({
@@ -32,6 +36,9 @@ export default function NewA({iteration}){
             }
             return third8;
         }
+        if(iteration === 3){
+            handleIteration
+        }
         
     }
     function columnHandle(){
@@ -52,18 +59,23 @@ export default function NewA({iteration}){
             }
             return col;
         }
+        if(iteration === 3){
+
+            handleIteration;
+        }
     }
     useEffect(()=>{
         try{
             if(iteration <= 2){
                 setNum(rowsHandle);
-            }else{
+            }else if(iteration > 2){
+                handleIteration
                 console.log(iteration);
             }
         }catch(er){
             console.log(er)
         }
-    },[num])
+    },[])
     return(
     <div class="a firsts">
         <div class="b firsts">
@@ -78,11 +90,12 @@ export default function NewA({iteration}){
       
       {
       //<!-- first and twelve bets -->
-        iteration !== 1 ? <FirstNtwelve tweleve={column.tweleve}
+        loading && iteration <=2  && (iteration !== 1  
+        ? <FirstNtwelve tweleve={column.tweleve}
         onebox={column.onebox}
         evenOdd={column.evenOdd}
         />:
-        <Colorbet />
+        <Colorbet />)
       }
       
     </div>   
