@@ -1,11 +1,11 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 export default function Zero({bets,
     setBets,loading}){
 
-
+      const [content,setContent] =useState();
     function handleBets(event){
         try{
-          const content = event.target.textContent
+          setContent(event.target.textContent)
           if(bets[0].bets === null || bets[0].bets === undefined){
             setBets(() => [ {['bets']:content}])
             console.log(bets); 
@@ -19,8 +19,19 @@ export default function Zero({bets,
         }
         
     }
+
+    useEffect(()=>{
+      
+          if(bets[0].bets === null || bets[0].bets === undefined&&
+            content !== undefined
+          ){
+            setBets(() => [ {['bets']:content}])
+            console.log(bets); 
+          } 
+        
+    },[bets.bets])
     return(
-        loading && (
+        loading && bets !== undefined && (
           <div  className="zerob">
       <span  onClick={(e)=>handleBets(e)} 
       id="zero" >0</span>
