@@ -42,8 +42,6 @@ function App() {
     setLoading(false);
     setIteration([3])
   }
-
-  
   return (
     <>
     <div  id="table1">
@@ -60,22 +58,14 @@ function App() {
           return ( <NewA id={iteration.id}iteration={v} 
             handleIteration={handleIteration}
             loading={loading}
-          
             />)
         }
-      
       })
       }
       {
         loading && <Twotoone handleBets={handleBets} /> 
       }
-    
-    
-      
     </div>
-    
-    
-      
     </>
   )
 }
