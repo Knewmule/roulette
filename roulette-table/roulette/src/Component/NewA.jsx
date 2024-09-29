@@ -13,7 +13,6 @@ export default function NewA({
             onebox:'1 TO 18',
             evenOdd:'EVEN'
         });
-
     return(
     <div class="a firsts">
         <NumberbetContainer 
@@ -21,11 +20,9 @@ export default function NewA({
         iteration={iteration} 
     handleIteration={handleIteration}
     loading={loading} />
-        
-      
       {
       //<!-- first and twelve bets -->
-        loading && iteration <=2  && (iteration !== 1  
+        iteration <=2  && (iteration !== 1  
         ? <FirstNtwelve tweleve={column.tweleve}
         onebox={column.onebox}
         evenOdd={column.evenOdd}

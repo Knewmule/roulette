@@ -1,9 +1,7 @@
 import React from 'react';
-
 export default function FirstNtwelve({tweleve,
   onebox, evenOdd
 }){
-
     return(
         <>
         <div class="ftb">
