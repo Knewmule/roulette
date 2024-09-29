@@ -16,16 +16,14 @@ function App() {
   function handleBets(event){
       try{
         setContent(event.target.textContent)
-        // if(bets.bets === null || bets.bets === undefined){
           // setBets(() => [ {['bets']:content}])
-          // dispatch(betActions.placebet(content));
-          console.log(bets); 
-      //   } 
-      // else{
-        // setBets((prev) => [...prev, {['bets']:content}])
-        dispatch(betActions.placebet((prev) => [...prev, {['bets']:content}]));
-        console.log(bets); 
-      // }
+         
+         if(!loading && bets !== undefined){
+          console.log(bets);  
+         }else{
+          dispatch(betActions.placebet(content));
+         }
+      
       }catch(e){
         console.log(e);
       }

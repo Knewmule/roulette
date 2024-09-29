@@ -3,13 +3,28 @@ import { createSlice } from '@reduxjs/toolkit';
 const betSlice = createSlice({
   name: 'bs',
   initialState: {
-    bet: {bets:0},
+    bets:[],
     total:0,
     stack:100
   },
   reducers: {
-    placebet(state, action) {
-        console.log(action.payload)
+    placebet(state = initialState, action) {
+        
+        if(state.bets !== NaN && 
+            state.bets !== undefined && 
+            action.payload !== undefined){
+            
+            state.bets.push(action.payload)
+            console.log(state.bets+ action.payload)
+        }else{
+            // const is = action.payload;
+            // if(is !== undefined && is !== NaN){
+                state.bets.push('bets')
+                console.log(state.bets+'else'+ action.payload)
+            // }
+            
+        }
+    //    return ([...prev, {['bets']:content}])
     //   state.bet.push(action.payload.bet);
     },
   },
