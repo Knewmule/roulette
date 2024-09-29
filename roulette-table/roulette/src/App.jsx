@@ -15,13 +15,15 @@ function App() {
   const [content,setContent] =useState();
   function handleBets(event){
       try{
-        setContent(event.target.textContent)
+        
           // setBets(() => [ {['bets']:content}])
          
-         if(!loading && bets !== undefined){
-          console.log(bets);  
+         if( bets !== undefined){
+          console.log(bets);
+          dispatch(betActions.placebet(content))  
          }else{
-          dispatch(betActions.placebet(content));
+          console.log('undef')
+          // dispatch(betActions.placebet(content));
          }
       
       }catch(e){
@@ -29,14 +31,14 @@ function App() {
       }
   }
 
-  // useEffect(()=>{
-  //       if(bets.bets === null || bets.bets === undefined&&
-  //         content !== undefined
-  //       ){
-  //         dispatch(betActions.placebet(() => [ {['bets']:content}]))
-  //         console.log('useeffect '+bets); 
-  //       } 
-  // },[bets])
+  useEffect(()=>{
+        // if(bets.bets === null || bets.bets === undefined&&
+        //   content !== undefined
+        // ){
+          dispatch(betActions.placebet(content))
+          // console.log('useeffect '+bets.bets); 
+        // } 
+  },[bets])
   
   function handleIteration(){
     setLoading(false);
@@ -45,14 +47,14 @@ function App() {
   return (
     <>
     <div  id="table1">
-    {loading && <Zero bets={bets} 
+    {loading && bets  && <Zero bets={bets} 
     loading={loading} 
     content={content}
     handleBets={handleBets}
      />}
     {
       // Numberbets first Section
-      loading && iteration.map((v)=>{
+      loading && bets &&iteration.map((v)=>{
         if(v <=2){
           return ( <NewA id={iteration.id}iteration={v} 
             handleIteration={handleIteration}
@@ -61,7 +63,7 @@ function App() {
         }
       })
       }
-      { loading && 
+      { loading && bets &&
 <Twotoone handleBets={handleBets} /> 
       }
     </div>
